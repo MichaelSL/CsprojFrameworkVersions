@@ -45,7 +45,7 @@ namespace CsprojFrameworkVersions
             }
 
             statusContext?.Refresh();
-            foreach (var (success, project, version) in scanResults)
+            foreach (var (success, project, version) in scanResults.OrderBy(x => x.version))
             {
                 outputTable.AddRow(project, version);
             }
